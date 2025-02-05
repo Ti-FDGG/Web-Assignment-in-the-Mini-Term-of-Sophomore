@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="Timothy的博客">
+  <meta name="description" content="Timothy的博客">
+  <title>Timothy的博客</title>
+  <link rel="stylesheet" href="styles/fundamental.css">
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/cursor.css">
+  <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
+  <!-- Font Awesome图标库 -->
+  <link rel="stylesheet" href="https://cdn.staticfile.net/font-awesome/5.15.4/css/all.css">
+  <link rel="stylesheet" href="styles/bgrparticlestars.css">
+  <link rel="icon" href="images/favicon.png">
+  <!-- <script src="scripts/bounceball.js" defer></script> -->
+  <!-- 在这个版本下在下面这行的后面加上defer，会导致整个sections中与aos动画相关的部分的画面全部无法渲染。
+   但是很神奇的是元素都在，比如那三个邻居的链接还能点 -->
+   <script src="scripts/nav.js" defer></script>
+  <script src="node_modules/aos/dist/aos.js"></script>
+  <!-- 星空背景 -->
+  <script src="scripts/bgrparticlestars.js" defer></script>
+  <script src="scripts/three.js/three.min.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <nav id="main-nav">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i>&nbsp;首页</a></li>
+            <li><a href="documents.html"><i class="fas fa-folder"></i>&nbsp;归档</a></li>
+            <li><a href="about.html"><i class="fas fa-user-circle"></i>&nbsp;关于</a></li>
+            <li><a href="friends.html"><i class="fas fa-user-friends"></i>&nbsp;友链</a></li>
+            <li>
+                <i class="fas fa-pen-fancy"></i>&nbsp;考试系统&nbsp;<i class="fas fa-caret-down"></i>
+                <div id="test-system">
+                    <a href="onlinetest.html">考试系统</a>
+                    <a href="display_scores.asp">历史成绩</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+      <!-- <canvas class="bounceball"></canvas> -->
+      <div id="particle-container"></div>
+      <p style="font-size: 50px;"><strong><em>施工中……</em></strong></p>
+    </div>
+  </div>
+  <!-- D-Sketon大大的鼠标烟花效果。我也不知道为什么必须要移动到底部才能够正常加载 -->
+  <script src="https://www.unpkg.com/mouse-firework@latest/dist/index.umd.js"></script>
+  <script src="scripts/mousefirework.js"></script>
+</body>
+</html>

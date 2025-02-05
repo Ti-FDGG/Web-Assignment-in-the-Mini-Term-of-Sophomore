@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="Timothy的博客">
+  <meta name="description" content="Timothy的博客">
+  <title>Timothy的博客</title>
+  <!-- fundamental.css为基础设置，放在上面。如有对某属性的修改，在下面的具体的css文件里修改即可 -->
+  <link rel="stylesheet" href="styles/fundamental.css">
+  <link rel="stylesheet" href="styles/cursor.css">
+  <link rel="stylesheet" href="styles/style_index.css">
+  <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
+  <!-- Font Awesome图标库 -->
+  <link rel="stylesheet" href="https://cdn.staticfile.net/font-awesome/5.15.4/css/all.css">
+  <link rel="stylesheet" href="styles/bgrparticlestars.css">
+  <link rel="icon" href="images/favicon.png">
+  <script src="scripts/scripts_index.js" defer></script>
+  <!-- <script src="scripts/bounceball.js" defer></script> -->
+  <!-- 星空背景 -->
+  <script src="scripts/bgrparticlestars.js" defer></script>
+  <script src="scripts/three.js/three.min.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <!-- <canvas class="bounceball"></canvas> -->
+      <div id="particle-container"></div>
+      <div id="content">
+        <div id="name-card-outter">
+          <div id="name-card">
+            <div class="avatar">
+              <img src="images/avatar.webp" alt="Timothy's avatar">
+            </div>
+            <div id="name-card-text">
+              <div id="name-card-name">
+                <p>火焰猫&nbsp;燐</p>
+              </div>
+              <div id="name-card-others">
+                <div id="name-card-description">
+                  <p><strong>BIT CS</strong>专业学生</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav id="main-nav">
+          <div id="nav-card">
+            <ul>
+              <li><a href="index.html" title="主页"><i class="fas fa-home"></i></a></li>
+              <li><a href="documents.html" title="归档"><i class="fas fa-folder"></i></a></li>
+              <li><a href="about.html" title="关于"><i class="fas fa-user-circle"></i></a></li>
+              <li><a href="friends.html" title="友链"><i class="fas fa-user-friends"></i></a></li>
+              <li><a href="onlinetest.html" title="考试系统"><i class="fas fa-pen-fancy"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <hr />
+      <footer>
+        <!-- 随机格言。内含大量引流狗内容，所以谨慎观看。 -->
+        <div id="footer-motto" class="motto"></div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- D-Sketon大大的鼠标烟花效果。我也不知道为什么必须要移动到底部才能够正常加载 -->
+  <script src="https://www.unpkg.com/mouse-firework@latest/dist/index.umd.js"></script>
+  <script src="scripts/mousefirework.js"></script>
+</body>
+</html>

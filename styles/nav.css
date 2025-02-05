@@ -1,0 +1,62 @@
+#main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+#main-nav.hidden {
+    top: -50px;
+}
+
+#main-nav ul {
+    display: flex;
+    width: 50%;
+    padding-left: 0;
+}
+
+#main-nav li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    position: relative;
+}
+
+#main-nav li:hover > #test-system {
+    display: block;
+}
+
+#test-system {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%; /* 添加此行，使下拉框出现在导航栏下方 */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* 添加平滑过渡效果 */
+}
+
+#test-system.show {
+    display: block;
+    opacity: 1;
+}
+
+#test-system a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+#test-system a:hover {
+    background-color: #575757;
+}

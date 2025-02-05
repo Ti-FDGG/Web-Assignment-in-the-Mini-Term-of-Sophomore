@@ -1,0 +1,40 @@
+/* 动画光标 */
+
+@keyframes cursor-animation1 {
+    0% { cursor: url('../images/cursor/outputpngs/AppStarting1.png'), auto; }
+    25% { cursor: url('../images/cursor/outputpngs/AppStarting2.png'), auto; }
+    50% { cursor: url('../images/cursor/outputpngs/AppStarting3.png'), auto; }
+    75% { cursor: url('../images/cursor/outputpngs/AppStarting4.png'), auto; }
+    100% { cursor: url('../images/cursor/outputpngs/AppStarting1.png'), auto; }
+}
+  
+/* body {
+    animation: cursor-animation1 1s steps(4) infinite;
+} */
+
+/* 静态光标 */
+
+body {
+  cursor: url('../images/cursor/outputpngs/AppStarting3.png'), auto;
+}
+
+a {
+  cursor: url('../images/cursor/outputpngs/Help.png'), pointer;
+}
+
+button {
+  cursor: url('../images/cursor/outputpngs/Help.png'), pointer;
+}
+
+body:active {
+  cursor: url('../images/cursor/outputpngs/AppStarting1.png'), auto;
+}
+
+/* 不知为何对body的设置在这里不管用，故单独设置 */
+#back-to-top {
+  cursor: url('../images/cursor/outputpngs/AppStarting3.png'), auto;
+}
+
+#back-to-top:active {
+  cursor: url('../images/cursor/outputpngs/AppStarting1.png'), auto;
+}

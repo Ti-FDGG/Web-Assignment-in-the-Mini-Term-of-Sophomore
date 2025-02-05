@@ -1,0 +1,43 @@
+body {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    /* overflow: hidden; */
+    /* 用于实现3d效果。但加上之后会导致背景的position: fixed失效 */
+    /* perspective: 1000px; */
+}
+
+/* hidden的默认设置，下面的如有不同可具体设置 */
+.hidden {
+    display: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    padding: .1em 1em;
+}
+
+#wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    width: 100%;
+}
+
+#particle-container {
+    opacity: 0.4;
+}
+
+
+footer {
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+}

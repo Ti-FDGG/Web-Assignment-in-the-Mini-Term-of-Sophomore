@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="Touhou考试系统">
+  <meta name="description" content="Touhou考试系统">
+  <!-- 避免跨源请求被拦截 -->
+  <!-- <meta http-equiv="Access-Control-Allow-Origin" content="*"> -->
+  <title>Touhou考试系统</title>
+  <link rel="stylesheet" href="styles/fundamental.css">
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/cursor.css">
+  <link rel="stylesheet" href="styles/style_onlinetest.css">
+  <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
+  <!-- Font Awesome图标库 -->
+  <link rel="stylesheet" href="https://cdn.staticfile.net/font-awesome/5.15.4/css/all.css">
+  <link rel="stylesheet" href="styles/bgrparticlestars.css">
+  <link rel="icon" href="images/favicon.png">
+  <script src="scripts/nav.js" defer></script>
+  <script src="scripts/scripts_onlinetest.js" defer></script>
+  <script src="scripts/submit_onlinetest.js" defer></script>
+  <!-- <script src="scripts/bounceball.js" defer></script> -->
+  <!-- 星空背景 -->
+  <script src="scripts/bgrparticlestars.js" defer></script>
+  <script src="scripts/three.js/three.min.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <!-- <canvas class="bounceball"></canvas> -->
+      <div id="particle-container"></div>
+      <div id="welcome">
+        <div id="welcome-inner">
+          <div id="welcome-greet">
+            <div id="welcome-greetbytimeandname"><span id="welcome-greetbytime">晚上好</span>，<span id="welcome-greetbyname">火焰猫燐</span>！
+            </div>
+            <div>欢迎来到Touhou考试系统！</div>
+          </div>
+          <div id="welcome-description">
+            <p>Touhou考试系统是一个专为东方Project粉丝设计的综合测试平台。</p>
+            <p>它提供了一系列关于东方Project世界的知识问题，旨在考验和提升你对游戏角色、历史和音乐等方面的了解。</p>
+            <p>通过这个系统，你可以挑战自己的知识水平，与其他粉丝一较高下，享受学习的乐趣。</p>
+          </div>
+          <div id='begin-button'>
+            <button id="begin-to-test">开始作答！</button>
+          </div>
+        </div>
+      </div>
+      <nav id="main-nav">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i>&nbsp;首页</a></li>
+            <li><a href="documents.html"><i class="fas fa-folder"></i>&nbsp;归档</a></li>
+            <li><a href="about.html"><i class="fas fa-user-circle"></i>&nbsp;关于</a></li>
+            <li><a href="friends.html"><i class="fas fa-user-friends"></i>&nbsp;友链</a></li>
+            <li>
+                <i class="fas fa-pen-fancy"></i>&nbsp;考试系统&nbsp;<i class="fas fa-caret-down"></i>
+                <div id="test-system">
+                    <a href="onlinetest.html">考试系统</a>
+                    <a href="display_scores.asp">历史成绩</a>
+                </div>
+            </li>
+        </ul>
+      </nav>
+      <div id="content">
+        <nav id="test-nav">
+          <div id="test-nav-inner">
+            <div id="now-time">
+              <div id="now-time-inner">
+                <div class="nav-item-title" id="now-time-title">当前时间</div>
+                <div id="now-time-display-date"></div>
+                <div id="now-time-display-time"></div>
+              </div>
+            </div>
+            <div id="your-name">
+              <div id="your-name-inner">
+                <div class="nav-item-title" id="your-name-title">你的名字</div>
+                <div id="your-name-text">火焰猫燐</div>
+              </div>
+            </div>
+            <div id="question-answer-card">
+              <div id="question-answer-card-inner">
+                <div class="nav-item-title" id="your-name-title">答题卡</div>
+                <div id="answer-grid"></div>
+              </div>
+            </div>
+            <div id="time-cost">
+              <div id="time-cost-inner">
+                <div class="nav-item-title" id="time-cost-title">已用时间</div>
+                <div id="time-cost-display">00:00:00</div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div id="test-content">
+          <div class="card-container-out ">
+            <form class="questions">
+              <div class="card-container smooth-transition">
+                <div class="card" id="card1">
+                  <div class="question-head">
+                    <div class="question-type">题型：<span class="question-type-inline">单选题</span></div>
+                    <div class="question-number">第<span class="question-number-inline">1</span>题</div>
+                  </div>
+                  <div class="question-body-outter">
+                    <div class="question-body">
+                      <div class="question-audio">
+                        <audio src="audios/th11_10.mp3" id="audio-question1" controls></audio>
+                      </div>
+                      <fieldset>
+                        <p>请选择歌曲的曲名</p>
+                        <ul>
+                          <li>
+                            <label for="1-option-A">
+                              A
+                              <input type="radio" id="1-option-A" name="question1" value="A"/>
+                              廃獄ララバイ
+                            </label>
+                          </li>
+                          <li>
+                            <label for="1-option-B">
+                              B
+                              <input type="radio" id="1-option-B" name="question1" value="B"/>
+                              Last Remote
+                            </label>
+                          </li>
+                          <li>
+                            <label for="1-option-C">
+                              C
+                              <input type="radio" id="1-option-C" name="question1" value="C"/>
+                              死体旅行　～ Be of good cheer!
+                            </label>
+                          </li>
+                          <li>
+                            <label for="1-option-D">
+                              D
+                              <input type="radio" id="1-option-D" name="question1" value="D"/>
+                              霊知の太陽信仰　～ Nuclear Fusion
+                            </label>
+                          </li>
+                        </ul>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="card" id="card2">
+                  <div class="question-head">
+                    <div class="question-type">题型：<span class="question-type-inline">单选题</span></div>
+                    <div class="question-number">第<span class="question-number-inline">2</span>题</div>
+                  </div>
+                  <div class="question-body-outter">
+                    <div class="question-body">
+                      <fieldset>
+                        <p>下列角色当中，哪一位拥有一张叫做“旧地狱的针山”的符卡？</p>
+                        <ul>
+                          <li>
+                            <label for="2-option-A">
+                              A
+                              <input type="radio" id="2-option-A" name="question2" value="A"/>
+                              灵乌路空
+                            </label>
+                          </li>
+                          <li>
+                            <label for="2-option-B">
+                              B
+                              <input type="radio" id="2-option-B" name="question2" value="B"/>
+                              古明地恋
+                            </label>
+                          </li>
+                          <li>
+                            <label for="2-option-C">
+                              C
+                              <input type="radio" id="2-option-C" name="question2" value="C"/>
+                              火焰猫燐
+                            </label>
+                          </li>
+                          <li>
+                            <label for="2-option-D">
+                              D
+                              <input type="radio" id="2-option-D" name="question2" value="D"/>
+                              古明地觉
+                            </label>
+                          </li>
+                        </ul>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="card" id="card3">
+                  <div class="question-head">
+                    <div class="question-type">题型：<span class="question-type-inline">多选题</span></div>
+                    <div class="question-number">第<span class="question-number-inline">3</span>题</div>
+                  </div>
+                  <div class="question-body-outter">
+                    <div class="question-body">
+                      <fieldset>
+                        <p>下列角色当中，哪些不属于地灵殿势力？</p>
+                        <ul>
+                          <li>
+                            <label for="3-option-A">
+                              A
+                              <input type="checkbox" id="3-option-A" name="question3" value="A"/>
+                              火焰猫燐
+                            </label>
+                          </li>
+                          <li>
+                            <label for="3-option-B">
+                              B
+                              <input type="checkbox" id="3-option-B" name="question3" value="B"/>
+                              星熊勇仪
+                            </label>
+                          </li>
+                          <li>
+                            <label for="3-option-C">
+                              C
+                              <input type="checkbox" id="3-option-C" name="question3" value="C"/>
+                              水桥帕露西
+                            </label>
+                          </li>
+                          <li>
+                            <label for="3-option-D">
+                              D
+                              <input type="checkbox" id="3-option-D" name="question3" value="D"/>
+                              圣白莲
+                            </label>
+                          </li>
+                        </ul>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="card" id="card4">
+                  <div class="question-head">
+                    <div class="question-type">题型：<span class="question-type-inline">单选题</span></div>
+                    <div class="question-number">第<span class="question-number-inline">4</span>题</div>
+                  </div>
+                  <div class="question-body-outter">
+                    <div class="question-body">
+                      <div class="question-img">
+                        <img src="images/4试题.png" alt="试题4图片">
+                      </div>
+                      <fieldset>
+                        <p>根据图中立绘的局部，猜测这是哪一位角色？</p>
+                        <ul>
+                          <li>
+                            <label for="4-option-A">
+                              A
+                              <input type="radio" id="4-option-A" name="question4" value="A"/>
+                              宫古芳香
+                            </label>
+                          </li>
+                          <li>
+                            <label for="4-option-B">
+                              B
+                              <input type="radio" id="4-option-B" name="question4" value="B"/>
+                              稗田阿求
+                            </label>
+                          </li>
+                          <li>
+                            <label for="4-option-C">
+                              C
+                              <input type="radio" id="4-option-C" name="question4" value="C"/>
+                              易者
+                            </label>
+                          </li>
+                          <li>
+                            <label for="4-option-D">
+                              D
+                              <input type="radio" id="4-option-D" name="question4" value="D"/>
+                              火焰猫燐
+                            </label>
+                          </li>
+                        </ul>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <div class="card" id="card5">
+                  <div class="question-head">
+                    <div class="question-type">题型：<span class="question-type-inline">填空题</span></div>
+                    <div class="question-number">网站评价</div>
+                  </div>
+                  <div class="question-body-outter">
+                    <div class="question-body">
+                      <fieldset>
+                        <p>您觉得这个网站怎么样？</p>
+                        <p>为网站打分</p>
+                        <div class="star-rating">
+                          <span class="star" id="5star" data-score="5">☆</span>
+                          <span class="star" id="4star" data-score="4">☆</span>
+                          <span class="star" id="3star" data-score="3">☆</span>
+                          <span class="star" id="2star" data-score="2">☆</span>
+                          <span class="star" id="1star" data-score="1">☆</span>
+                        </div>
+                        <div id="suggestions-outter"><label for="suggestions">写下您的建议</label></div>
+                        <textarea id="suggestions" name="question5" cols="50" rows="5"></textarea>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="submit-outter"><button type="button" class="submit">提交答案！</button></div>
+          <button class="arrow prev"><i class="fa fa-arrow-left"></i></button>
+          <button class="arrow next"><i class="fa fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- D-Sketon大大的鼠标烟花效果。我也不知道为什么必须要移动到底部才能够正常加载 -->
+  <script src="https://www.unpkg.com/mouse-firework@latest/dist/index.umd.js"></script>
+  <script src="scripts/mousefirework.js"></script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="About Timothy's Blog">
+  <meta name="description" content="The about page of Timothy's Blog">
+  <title>关于作者</title>
+  <link rel="stylesheet" href="styles/fundamental.css">
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/cursor.css">
+  <link rel="stylesheet" href="styles/style_about.css">
+  <link rel="stylesheet" href="node_modules/aos/dist/aos.css" />
+  <!-- Font Awesome图标库 -->
+  <link rel="stylesheet" href="https://cdn.staticfile.net/font-awesome/5.15.4/css/all.css">
+  <link rel="stylesheet" href="styles/bgrparticlestars.css">
+  <link rel="icon" href="images/favicon.png">
+  <script src="scripts/scripts_about.js" defer></script>
+  <!-- <script src="scripts/bounceball.js" defer></script> -->
+  <!-- 在这个版本下在下面这行的后面加上defer，会导致整个sections中与aos动画相关的部分的画面全部无法渲染。
+   但是很神奇的是元素都在，比如那三个邻居的链接还能点 -->
+   <script src="scripts/nav.js" defer></script>
+  <script src="node_modules/aos/dist/aos.js"></script>
+  <!-- 星空背景 -->
+  <script src="scripts/bgrparticlestars.js" defer></script>
+  <script src="scripts/three.js/three.min.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <!-- <canvas class="bounceball"></canvas> -->
+      <div id="particle-container"></div>
+      <nav id="main-nav">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i>&nbsp;首页</a></li>
+            <li><a href="documents.html"><i class="fas fa-folder"></i>&nbsp;归档</a></li>
+            <li><a href="about.html"><i class="fas fa-user-circle"></i>&nbsp;关于</a></li>
+            <li><a href="friends.html"><i class="fas fa-user-friends"></i>&nbsp;友链</a></li>
+            <li>
+                <i class="fas fa-pen-fancy"></i>&nbsp;考试系统&nbsp;<i class="fas fa-caret-down"></i>
+                <div id="test-system">
+                    <a href="onlinetest.html">考试系统</a>
+                    <a href="display_scores.asp">历史成绩</a>
+                </div>
+            </li>
+        </ul>
+      </nav>
+      <header id="header">
+        <div id="header-head">
+          <img src="images/燐空.png" alt="头图">
+          <div id="header-head-title">
+            <span class="logo-span"><a href="index.html"><h1>Timothy's Blog</h1></a></span>
+          </div>
+        </div>
+      </header>
+      <div id="content">
+        <div id="name-card-outter">
+          <div id="name-card">
+            <div class="avatar">
+              <img src="images/avatar.webp" alt="Timothy's avatar">
+            </div>
+            <div id="name-card-text">
+              <div id="name-card-name">
+                <strong><p>火焰猫&nbsp;燐</p></strong>
+              </div>
+              <div id="name-card-others" data-aos="fade-up">
+                <div id="name-card-description" >
+                  <p><strong>BIT CS</strong>专业学生</p>
+                </div>
+                <div id="name-card-motto" class="motto">
+                  <p>但愿明天也好运</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="sections">
+          <section id="courses" class="section-card">
+            <div class="section-title" data-aos="fade-up"><i class="fas fa-calendar-alt"></i>&nbsp;COURSE SCHEDUEL</div>
+            <div id="section-inner1" data-aos="fade-up">
+              <table>
+                <tr>
+                  <th id="top-cross" colspan="2">星期/节次</th>
+                  <th>星期一</th>
+                  <th>星期二</th>
+                  <th>星期三</th>
+                  <th>星期四</th>
+                  <th>星期五</th>
+                  <th>星期六</th>
+                  <th>星期日</th>
+                </tr>
+                <tr>
+                  <td rowspan="2">上午</td>
+                  <td>第一大节</td>
+                  <td><div class="course-card">
+                      <div class="course-name">概率论与数理统计</div>
+                      <div class="teacher-name">王岩华</div>
+                      <div class="course-time">1-2节</div>
+                      <div class="course-location">理教楼207</div>
+                    </div></td>
+                  <td><div class="course-card">
+                    <div class="course-name">离散数学</div>
+                    <div class="teacher-name">刘琼昕</div>
+                    <div class="course-time">1-2节</div>
+                    <div class="course-location">文萃楼B139</div>
+                  </div></td>
+                  <td><div class="course-card">
+                    <div class="course-name">概率论与数理统计</div>
+                    <div class="teacher-name">王岩华</div>
+                    <div class="course-time">1-2节</div>
+                    <div class="course-location">理教楼207</div>
+                  </div></td>
+                  <td><div class="course-card">
+                    <div class="course-name">离散数学</div>
+                    <div class="teacher-name">刘琼昕</div>
+                    <div class="course-time">1-2节</div>
+                    <div class="course-location">文萃楼B139</div>
+                  </div></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>第二大节</td>
+                  <td><div class="course-card">
+                      <div class="course-name">数值分析</div>
+                      <div class="teacher-name">孙新</div>
+                      <div class="course-time">3-5节</div>
+                      <div class="course-location">综教A204</div>
+                    </div></td>
+                  <td><div class="course-card">
+                    <div class="course-name">数据结构与算法设计</div>
+                    <div class="teacher-name">袁武</div>
+                    <div class="course-time">3-5节</div>
+                    <div class="course-location">理教楼407</div>
+                  </div></td>
+                  <td><div class="course-card">
+                    <div class="course-name">马克思主义基本原理</div>
+                    <div class="teacher-name">王文娟</div>
+                    <div class="course-time">3-5节</div>
+                    <div class="course-location">综教A203</div>
+                  </div></td>
+                  <td><div class="course-card">
+                    <div class="course-name">大学物理AⅡ</div>
+                    <div class="teacher-name">费瑞翔</div>
+                    <div class="course-time">3-5节</div>
+                    <div class="course-location">理教楼207</div>
+                  </div></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="2">下午</td>
+                  <td>第三大节</td>
+                  <td></td>
+                  <td><div class="course-card">
+                    <div class="course-name">大学物理AⅡ</div>
+                    <div class="teacher-name">费瑞翔</div>
+                    <div class="course-time">6-7节</div>
+                    <div class="course-location">理教楼207</div>
+                  </div></td>
+                  <td></td>
+                  <td><div class="course-card">
+                    <div class="course-name">数据结构与算法设计</div>
+                    <div class="teacher-name">袁武</div>
+                    <div class="course-time">6-7节</div>
+                    <div class="course-location">理教楼407</div>
+                  </div></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>第四大节</td>
+                  <td><div class="course-card">
+                    <div class="course-name">JAVA语言程序设计</div>
+                    <div class="teacher-name">金旭亮</div>
+                    <div class="course-time">8-10节</div>
+                    <div class="course-location">文萃楼B139</div>
+                  </div></td>
+                  <td><div class="course-card">
+                    <div class="course-name">体育/轮滑</div>
+                    <div class="teacher-name">贾丽敏</div>
+                    <div class="course-time">8-9节</div>
+                    <div class="course-location">南校区篮球场</div>
+                  </div></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>晚上</td>
+                  <td>第五大节</td>
+                  <td></td>
+                  <td><div class="course-card">
+                    <div class="course-name">西方音乐史</div>
+                    <div class="teacher-name">刘昂</div>
+                    <div class="course-time">11-13节</div>
+                    <div class="course-location">文萃楼G130</div>
+                  </div></td>
+                  <td></td>
+                  <td><div class="course-card">
+                    <div class="course-name">形势与政策Ⅲ</div>
+                    <div class="teacher-name">侯明佳,相华,赵方,朱贵楠</div>
+                    <div class="course-time">11-12节</div>
+                    <div class="course-location">理教楼401</div>
+                  </div></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
+          </section>
+          <section id="movie-card" class="section-card" style="height: 830px;">
+            <div class="section-title" data-aos="fade-up"><i class="fas fa-film"></i>&nbsp;FAVORITE MOVIES</div>
+            <div id="section-inner2">
+              <div class="normal-card detail-card" data-aos="fade-up" style="top: 100px;">
+                <div class="detail-card-wrapper">
+                  <div class="image"><img src="images/movies/movie1.jpg" alt="你的名字海报"></div>
+                  <div class="normal-card-title">你的名字</div>
+                  <!-- description默认状态下被隐藏 -->
+                  <div class="normal-card-description">
+                    <p>电影《你的名字。》是一部由新海诚执导的日本动画电影，讲述了一对少男少女在梦中身体互换的奇妙故事。
+                    <p>女主角三叶是一个居住在深山乡间小镇的女高中生，而男主角泷则是东京的一名男高中生。
+                    <p>两人在梦中意外地交换了身体，经历了一系列奇妙的冒险，并逐渐产生了深厚的情感。
+                    <p>电影以其精美的画面、动人的音乐和深刻的主题赢得了全球观众的喜爱，成为了一部深受欢迎的作品。
+                    <div class="image"><img src="images/movies/movie1_2.png" alt="你的名字剧照"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="normal-card detail-card" data-aos="fade-up">
+                <div class="detail-card-wrapper">
+                  <div class="image"><img src="images/movies/movie2.jpg" alt="天气之子海报"></div>
+                  <div class="normal-card-title">天气之子</div>
+                  <div class="normal-card-description">
+                    <p>《天气之子》是由新海诚执导的一部日本动画电影，讲述了少年帆高与拥有操控天气超能力的少女阳菜之间的奇幻爱情故事。
+                    <p>影片以天气变化混乱的时代为背景，展现了被命运操控的少年与少女，自己“选择”生存方式的故事。
+                    <p>帆高离开家乡来到东京，遇到了能够通过祈祷让天空放晴的阳菜。两人的生活因为阳菜的能力而发生了改变，但这份能力背后隐藏着重大秘密和代价。
+                    <div class="image"><img src="images/movies/movie2_2.jpg" alt="天气之子剧照"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="normal-card detail-card" data-aos="fade-up" style="top: 200px;">
+                <div class="detail-card-wrapper">
+                  <div class="image"><img src="images/movies/movie3.jpg" alt="铃芽之旅海报"></div>
+                  <div class="normal-card-title">铃芽之旅</div>
+                  <div class="normal-card-description">
+                    <p>《铃芽之旅》是由新海诚执导的最新动画电影，讲述了17岁少女铃芽在偶遇神秘男子草太后，意外释放了引发地震的神秘力量“蚓厄”。
+                    <p>为了阻止灾难，铃芽与草太一同踏上了关闭灾难之门的旅程。影片中，铃芽不仅要面对自然灾害的威胁，还要揭开隐藏在废墟中的秘密，以及与草太之间的情感纠葛。
+                    <p>电影探讨了生命、时间、灾难和爱情的主题，同时对日本社会和文化进行了反思和致敬。
+                    <div class="image"><img src="images/movies/movie3_2.jpg" alt="铃芽之旅剧照"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="mood-card" class="section-card">
+            <div class="section-title" data-aos="fade-up"><i class="fas fa-smile"></i>&nbsp;MY MOOD</div>
+            <div id="section-inner3">
+              <div class="normal-card flip-card" data-aos="flip-left">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <div class="image"><img src="images/moods/happy.jpg" alt="快乐"></div>
+                    <div class="normal-card-title">开心(*^▽^*)</div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="image"><img src="images/moods/sad.jpg" alt="难过"></div>
+                    <div class="normal-card-description">这个可恶的翻转卡片我费了好大劲才弄好，但是我还是不明白为什么。所以一点也不开心</div>
+                  </div>
+                  </div>
+              </div>
+              <div class="normal-card flip-card" data-aos="flip-left">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <div class="image"><img src="images/moods/sad.jpg" alt="难过"></div>
+                    <div class="normal-card-title">难过(ಥ﹏ಥ)</div>
+                  </div>
+                  <div class="flip-card-back">
+                    <div class="image"><img src="images/moods/happy.jpg" alt="快乐"></div>
+                    <div class="normal-card-description">实际上是开心与难过的二象性</div>
+                  </div>
+                </div>   
+              </div>
+            </div>
+          </section>
+          <section id="neighbor-card" class="section-card">
+            <div class="section-title" data-aos="fade-up"><i class="fas fa-house-user"></i></i>&nbsp;MY NEIGHBORS</div>
+            <div id="section-inner4">
+              <div class="normal-card" title="点击查看个人资料" data-aos="zoom-in-left">
+                <a href="https://thwiki.cc/古明地觉">
+                  <div class="image"><img src="images/neighbors/nbr1.png" alt="觉觉"></div>
+                  <div class="normal-card-title">古明地&nbsp;觉</div>
+                  <div class="normal-card-description"></div>
+                </a>
+              </div>
+              <div class="normal-card" title="点击查看个人资料" data-aos="zoom-in">
+                <a href="https://thwiki.cc/古明地恋">
+                  <div class="image"><img src="images/neighbors/nbr2.png" alt="恋恋"></div>
+                  <div class="normal-card-title">古明地&nbsp;恋</div>
+                  <div class="normal-card-description"></div>
+                </a>
+              </div>
+              <div class="normal-card" title="点击查看个人资料" data-aos="zoom-in-right">
+                <a href="https://thwiki.cc/灵乌路空">
+                  <div class="image"><img src="images/neighbors/nbr3.png" alt="空空"></div>
+                  <div class="normal-card-title">灵乌路&nbsp;空</div>
+                  <div class="normal-card-description"></div>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <hr />
+      <footer>
+        <!-- 随机格言。内含大量引流狗内容，所以谨慎观看。 -->
+        <div id="footer-motto" class="motto"></div>
+      </footer>
+      <!-- 返回顶部 -->
+      <div id="back-to-top"><i class="fas fa-arrow-up"></i></div>
+    </div>
+  </div>
+  <!-- AOS初始化。在<head>元素中即使用了defer也会使得初始化错误 -->
+  <script>
+    AOS.init({
+      easing: 'ease-out-back',
+      duration: 1000
+    });
+  </script>
+  <!-- D-Sketon大大的鼠标烟花效果。我也不知道为什么必须要移动到底部才能够正常加载 -->
+  <script src="https://www.unpkg.com/mouse-firework@latest/dist/index.umd.js"></script>
+  <script src="scripts/mousefirework.js"></script>
+</body>
+</html>

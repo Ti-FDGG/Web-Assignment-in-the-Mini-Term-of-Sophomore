@@ -1,0 +1,61 @@
+#particle-container {
+    opacity: 1;
+}
+
+#content {
+    height: 90vh;
+    position: relative;
+    margin-left: 120px;
+    margin-right: 120px;
+    /* z-index: -1; */
+}
+
+#name-card-outter {
+    height: 400px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 8vh;
+}
+
+#name-card {
+    border-radius: 10px;
+    height: 400px;
+    padding: 20px;
+    text-align: center;
+}
+
+#name-card .avatar img {
+    min-width: 100px;
+    width: 200px;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
+}
+
+#name-card .avatar img:hover {
+    transform: scale(1.1);
+}
+
+#name-card-name {
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+#main-nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#main-nav ul {
+    display: flex;
+    padding-left: 0;
+    font-size: 20px;
+}
+
+#main-nav li {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}

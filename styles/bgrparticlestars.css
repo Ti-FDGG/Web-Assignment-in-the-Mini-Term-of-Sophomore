@@ -1,0 +1,19 @@
+#particle-container {
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    position: fixed;
+}
+
+canvas {
+    display: block;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8)) blur(1px);
+    animation: flicker 3s infinite alternate;
+    transition: all 0.5s ease;
+}
+
+@keyframes flicker {
+    0% { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8)) blur(1px); }
+    50% { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1)) blur(1px); }
+    100% { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8)) blur(1px); }
+}
